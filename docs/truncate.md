@@ -8,3 +8,4 @@ The `truncate_string` function ensures that a given input string does not exceed
 ## Function Signature
 ```python
 def truncate_string(input_text: str, max_chars: int = 90000) -> str:
+```
