@@ -1,5 +1,6 @@
 import sys
 from initialize_agent import agent
+from truncate import truncate_string
 
 if __name__ == "__main__":
     # Example question for the agent
@@ -7,9 +8,9 @@ if __name__ == "__main__":
 
     # SQL query to fetch the required data
     query = """
-    SELECT station, "name", "date", awnd, prcp, snow, snwd, tempmax, tempmin  FROM Samples."samples.dremio.com"."NYC-weather.csv";
+    SELECT station, "name", "date", awnd, prcp, snow, snwd, tempmax, tempmin  FROM Samples."samples.dremio.com"."NYC-weather.csv" LIMIT 3000;
     """
 
     # Combine the question and query for the agent
-    response = agent.run(f"Run this query: {query} and answer the question: {question}")
+    response = agent.run(f"Answer the question: {question} with this Data: {query}")
     print(response)
