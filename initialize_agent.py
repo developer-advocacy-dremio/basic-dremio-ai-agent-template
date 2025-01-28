@@ -1,9 +1,10 @@
 from langchain.agents import initialize_agent, Tool, AgentType
 from langchain_community.llms import OpenAI
 from dremio_langchain_tool import DremioQueryTool 
+from env import DREMIO_ENVIRONMENT
 
 # Initialize the tool
-dremio_tool = DremioQueryTool(mode="software")  # Use "cloud" if connecting to Dremio Cloud
+dremio_tool = DremioQueryTool(mode=DREMIO_ENVIRONMENT)  # Use "cloud" if connecting to Dremio Cloud
 
 # Wrap the tool for LangChain
 tools = [Tool(name=dremio_tool.name, func=dremio_tool.run, description=dremio_tool.description)]
