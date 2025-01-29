@@ -22,7 +22,6 @@ python run.py "What is the average age of the people in the dataset?"
 
 ## More Details on How Each File Works
 
-- [env.py](./docs/env.md)
 - [DremioSQLDatabase.py](./docs/DremioSQLDatabase.md)
 - [connection.py](./docs/connection.md)
 - [agent.py](./docs/agent.md)
