@@ -15,10 +15,12 @@
 
 - [Dremio Agent V1](./v1/readme.md)
 - [Dremio Agent V2](./v2/readme.md) 
+- [Dremio Agent V3](./v3/readme.md)
 
-| **Component**         | **V1**                  | **V2**             |
-|----------------------|--------------------------------|--------------------------------|
-| **Dremio Connection** | `DremioQueryTool` via Arrow Flight | SQLAlchemy via `sqlalchemy_dremio` |
-| **Query Execution**   | `_run(query: str) → Pandas DataFrame` | `sql_agent.run(natural_language_query)` |
-| **Query Generation**  | Manually crafted queries | AI-generated SQL queries |
-| **LLM Integration**   | OpenAI LLM with manual queries | OpenAI LLM auto-generating SQL |
+| **Component**         | **V1**                  | **V2**             | **V3** |
+|----------------------|--------------------------------|--------------------------------|-------|
+| **Dremio Connection** | `DremioQueryTool` via Arrow Flight | SQLAlchemy via `sqlalchemy_dremio` | |
+| **Query Execution**   | `_run(query: str) → Pandas DataFrame` | `sql_agent.run(natural_language_query)` | |
+| **Query Generation**  | Manually crafted queries | AI-generated SQL queries | |
+| **LLM Integration**   | OpenAI LLM with manual queries | OpenAI LLM auto-generating SQL | |
+| **Web UI** | NO | NO | YES |
