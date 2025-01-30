@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SQL Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered SQL Agent</h1>
+        <p>Enter a SQL query or ask a question about your Dremio database.</p>
+        
+        <form id="queryForm">
+            <textarea id="query" name="query" placeholder="Enter a SQL query (optional)"></textarea>
+            <input type="text" id="question" name="question" placeholder="Ask a natural language question">
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="responseContainer">
+            <h2>Response:</h2>
+            <p id="responseText"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("queryForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+            const response = await fetch("/", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById("responseText").innerText = result.response || "No response received.";
+        });
+    </script>
+</body>
+</html>

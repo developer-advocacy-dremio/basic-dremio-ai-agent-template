@@ -142,7 +142,7 @@ class DremioSQLDatabase(SQLDatabase):
         """
         Ensures that column names that are Dremio keywords are properly quoted.
         """
-        dremio_keywords = {"date", "timestamp", "user", "group", "order", "limit", "offset", "join"}
+        dremio_keywords = {"date", "timestamp", "user", "group", "order", "offset", "join"}
 
         words = query.split()
         for i, word in enumerate(words):
