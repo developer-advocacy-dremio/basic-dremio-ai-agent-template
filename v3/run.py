@@ -6,6 +6,7 @@ question = sys.argv[1] if len(sys.argv) > 1 else "What is the average temperatur
 
 prompt = f"""
 You are an expert SQL agent working with a Dremio database to answer the following question: "{question}".
+Use the data from the following query to help answer your question.
 Before generating a query:
 1️⃣ Fetch the table’s fully qualified name.
 2️⃣ Retrieve column names using `INFORMATION_SCHEMA.COLUMNS`.

@@ -12,7 +12,11 @@ def index():
         if not query and not question:
             return jsonify({"error": "Please provide either a SQL query or a natural language question."})
 
-        input_text = question if question else query
+        input_text = f"""
+        Run the following query: {query}
+        Using the Data Answer the following question: {question}
+        """
+        
         response = sql_agent.run(input_text)
 
         return jsonify({"response": response})
